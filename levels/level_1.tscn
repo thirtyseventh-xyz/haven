@@ -11,7 +11,7 @@ size = Vector2(490, 74)
 [node name="Node2D" type="Node2D" unique_id=1660641705]
 
 [node name="TestPlatform" type="StaticBody2D" parent="." unique_id=2018771496]
-position = Vector2(544, 352)
+position = Vector2(0, 72)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TestPlatform" unique_id=688453716]
 shape = SubResource("RectangleShape2D_a5fwx")
@@ -22,7 +22,7 @@ scale = Vector2(496, 79.99999)
 mesh = SubResource("QuadMesh_57e5w")
 
 [node name="TestPlatform2" type="StaticBody2D" parent="." unique_id=219690860]
-position = Vector2(1168, 264)
+position = Vector2(624, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TestPlatform2" unique_id=1025620808]
 shape = SubResource("RectangleShape2D_a5fwx")
@@ -33,7 +33,7 @@ scale = Vector2(496, 79.99999)
 mesh = SubResource("QuadMesh_57e5w")
 
 [node name="TestPlatform3" type="StaticBody2D" parent="." unique_id=640697380]
-position = Vector2(1768, 152)
+position = Vector2(1224, -128)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TestPlatform3" unique_id=1051535577]
 shape = SubResource("RectangleShape2D_a5fwx")
@@ -44,12 +44,11 @@ scale = Vector2(496, 79.99999)
 mesh = SubResource("QuadMesh_57e5w")
 
 [node name="Player" parent="." unique_id=1278515245 instance=ExtResource("1_vn7o3")]
-position = Vector2(544, 248)
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1403083273]
-position = Vector2(320, 304)
 script = ExtResource("2_jirdo")
 
 [connection signal="new_line_point" from="Player" to="Line2D" method="new_point"]
+[connection signal="track_last_point" from="Player" to="Line2D" method="track_last_point"]
 
 [editable path="Player"]
