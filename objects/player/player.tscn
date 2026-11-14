@@ -27,6 +27,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ssrue")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=836499005]
+position = Vector2(-105, -43)
 
 [node name="Stock ui stuffs" type="Control" parent="Camera2D" unique_id=1632492285]
 layout_mode = 3
@@ -36,10 +37,10 @@ offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D/Stock ui stuffs" unique_id=1403211471]
 layout_mode = 0
-offset_left = -546.0
-offset_top = -184.0
-offset_right = -308.0
-offset_bottom = 305.0
+offset_left = -564.0
+offset_top = -312.0
+offset_right = -289.0
+offset_bottom = 314.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Camera2D/Stock ui stuffs" unique_id=1950651672]
 layout_mode = 0
@@ -117,11 +118,15 @@ texture = ExtResource("10_dthqj")
 layout_mode = 2
 texture = ExtResource("4_m4kly")
 
-[node name="HavenUiExport3Text" type="Sprite2D" parent="Camera2D/Stock ui stuffs" unique_id=1043989041]
-position = Vector2(-830.99994, 132)
-scale = Vector2(0.15785445, 0.15785445)
-texture = ExtResource("3_gnkmh")
-
 [node name="HavenUiExport1Text" type="Sprite2D" parent="Camera2D/Stock ui stuffs" unique_id=218079646]
 scale = Vector2(0.15874328, 0.1587457)
 texture = ExtResource("5_ow0dq")
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Stock ui stuffs" unique_id=1712984811]
+layout_mode = 0
+offset_left = -263.99997
+offset_top = -192.99998
+offset_right = 436.00003
+offset_bottom = 507.0
+scale = Vector2(0.159, 0.159)
+texture = ExtResource("3_gnkmh")
