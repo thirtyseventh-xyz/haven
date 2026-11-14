@@ -2,14 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://8uqsydavrtke" path="res://objects/player/player.tscn" id="1_vn7o3"]
 [ext_resource type="Script" uid="uid://tghifcnl73av" path="res://levels/line_2d.gd" id="2_jirdo"]
-[ext_resource type="Script" uid="uid://cr5jca3dqh4fc" path="res://levels/stock_line.gd" id="3_bt44k"]
+[ext_resource type="Texture2D" uid="uid://bmhlgy5k7bmw5" path="res://assets/player.svg" id="3_bt44k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5fwx"]
 size = Vector2(490, 74)
 
 [sub_resource type="QuadMesh" id="QuadMesh_57e5w"]
-
-[sub_resource type="Gradient" id="Gradient_jirdo"]
 
 [node name="Node2D" type="Node2D" unique_id=1660641705]
 
@@ -20,6 +18,7 @@ position = Vector2(0, 72)
 shape = SubResource("RectangleShape2D_a5fwx")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="TestPlatform" unique_id=933322260]
+modulate = Color(0, 0, 0, 1)
 position = Vector2(-7.6293945e-06, -7.6293945e-06)
 scale = Vector2(496, 79.99999)
 mesh = SubResource("QuadMesh_57e5w")
@@ -31,6 +30,7 @@ position = Vector2(624, -16)
 shape = SubResource("RectangleShape2D_a5fwx")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="TestPlatform2" unique_id=1065376927]
+modulate = Color(0, 0, 0, 1)
 position = Vector2(-7.6293945e-06, -7.6293945e-06)
 scale = Vector2(496, 79.99999)
 mesh = SubResource("QuadMesh_57e5w")
@@ -42,19 +42,22 @@ position = Vector2(1224, -128)
 shape = SubResource("RectangleShape2D_a5fwx")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="TestPlatform3" unique_id=894247972]
+modulate = Color(0, 0, 0, 1)
 position = Vector2(-7.6293945e-06, -7.6293945e-06)
 scale = Vector2(496, 79.99999)
 mesh = SubResource("QuadMesh_57e5w")
 
-[node name="Player" parent="." unique_id=1278515245 instance=ExtResource("1_vn7o3")]
-
 [node name="Line2D" type="Line2D" parent="." unique_id=1403083273]
-visible = false
-gradient = SubResource("Gradient_jirdo")
+default_color = Color(1, 0, 0, 1)
 script = ExtResource("2_jirdo")
 
+[node name="Player" parent="." unique_id=1278515245 instance=ExtResource("1_vn7o3")]
+
+[node name="Sprite2D" parent="Player" index="1" unique_id=1767026703]
+scale = Vector2(0.165, 0.165)
+texture = ExtResource("3_bt44k")
+
 [node name="StockLine" type="Node2D" parent="." unique_id=441086240]
-script = ExtResource("3_bt44k")
 
 [connection signal="new_line_point" from="Player" to="Line2D" method="new_point"]
 [connection signal="new_line_point" from="Player" to="StockLine" method="new_point"]

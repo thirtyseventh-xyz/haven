@@ -2,6 +2,16 @@
 
 [ext_resource type="Script" uid="uid://d4gh47prx2awy" path="res://objects/player/player.gd" id="1_g7ett"]
 [ext_resource type="Texture2D" uid="uid://uelvhslkv8pv" path="res://icon.svg" id="2_ssrue"]
+[ext_resource type="Texture2D" uid="uid://c484mla4fem2m" path="res://assets/haven ui export 3 text.svg" id="3_gnkmh"]
+[ext_resource type="FontFile" uid="uid://cq2bptet54w06" path="res://assets/Nunito-Bold.ttf" id="3_ow0dq"]
+[ext_resource type="Texture2D" uid="uid://cdmb8hdcrmaqe" path="res://assets/nvidia.png" id="3_xkryw"]
+[ext_resource type="Texture2D" uid="uid://knerau6getdw" path="res://assets/spacer.png" id="4_m4kly"]
+[ext_resource type="Texture2D" uid="uid://b6uhve7ubnft" path="res://assets/haven ui export 1 text.svg" id="5_ow0dq"]
+[ext_resource type="Texture2D" uid="uid://briax2kvxene1" path="res://assets/hc1.png" id="6_c34wb"]
+[ext_resource type="Texture2D" uid="uid://dfeeswkkrtq18" path="res://assets/metrolinx.png" id="7_45rsp"]
+[ext_resource type="Texture2D" uid="uid://iyejncqy6v0u" path="res://assets/drew'.png" id="8_ylcck"]
+[ext_resource type="Texture2D" uid="uid://dvctt8lm4q1lp" path="res://assets/hc2.png" id="9_x5bgp"]
+[ext_resource type="Texture2D" uid="uid://dh0ka1vdu7dqg" path="res://assets/google.png" id="10_dthqj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a5fwx"]
 radius = 32.0
@@ -17,3 +27,106 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ssrue")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=836499005]
+position = Vector2(-105, -43)
+
+[node name="Stock ui stuffs" type="Control" parent="Camera2D" unique_id=1632492285]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/Stock ui stuffs" unique_id=1403211471]
+layout_mode = 0
+offset_left = -564.0
+offset_top = -312.0
+offset_right = -289.0
+offset_bottom = 314.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Camera2D/Stock ui stuffs" unique_id=1950651672]
+layout_mode = 0
+offset_left = -527.00006
+offset_top = -171.0
+offset_right = 730.862
+offset_bottom = 2778.6855
+scale = Vector2(0.159, 0.159)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/Stock ui stuffs/ScrollContainer" unique_id=511324222]
+layout_mode = 2
+
+[node name="Spacer7" type="TextureRect" parent="Camera2D/Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=1492807207]
+layout_mode = 2
+texture = ExtResource("4_m4kly")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=1039796533]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_ow0dq")
+theme_override_font_sizes/normal_font_size = 200
+text = "Mail:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Spacer2" type="TextureRect" parent="Camera2D/Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=1470403309]
+layout_mode = 2
+texture = ExtResource("4_m4kly")
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=47131226]
+layout_mode = 2
+texture = ExtResource("3_xkryw")
+
+[node name="Spacer" type="TextureRect" parent="Camera2D/Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=1426180282]
+layout_mode = 2
+texture = ExtResource("4_m4kly")
+
+[node name="TextureRect2" type="TextureRect" parent="Camera2D/Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=1802135621]
+layout_mode = 2
+texture = ExtResource("6_c34wb")
+
+[node name="Spacer3" type="TextureRect" parent="Camera2D/Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=491590921]
+layout_mode = 2
+texture = ExtResource("4_m4kly")
+
+[node name="TextureRect3" type="TextureRect" parent="Camera2D/Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=566643786]
+layout_mode = 2
+texture = ExtResource("7_45rsp")
+
+[node name="Spacer4" type="TextureRect" parent="Camera2D/Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=2031236169]
+layout_mode = 2
+texture = ExtResource("4_m4kly")
+
+[node name="TextureRect4" type="TextureRect" parent="Camera2D/Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=139771307]
+layout_mode = 2
+texture = ExtResource("8_ylcck")
+
+[node name="Spacer5" type="TextureRect" parent="Camera2D/Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=1534494149]
+layout_mode = 2
+texture = ExtResource("4_m4kly")
+
+[node name="TextureRect5" type="TextureRect" parent="Camera2D/Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=640406157]
+layout_mode = 2
+texture = ExtResource("9_x5bgp")
+
+[node name="Spacer6" type="TextureRect" parent="Camera2D/Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=1654782308]
+layout_mode = 2
+texture = ExtResource("4_m4kly")
+
+[node name="TextureRect6" type="TextureRect" parent="Camera2D/Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=1737820988]
+layout_mode = 2
+texture = ExtResource("10_dthqj")
+
+[node name="Spacer8" type="TextureRect" parent="Camera2D/Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=623058955]
+layout_mode = 2
+texture = ExtResource("4_m4kly")
+
+[node name="HavenUiExport1Text" type="Sprite2D" parent="Camera2D/Stock ui stuffs" unique_id=218079646]
+scale = Vector2(0.15874328, 0.1587457)
+texture = ExtResource("5_ow0dq")
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Stock ui stuffs" unique_id=1712984811]
+layout_mode = 0
+offset_left = -263.99997
+offset_top = -192.99998
+offset_right = 436.00003
+offset_bottom = 507.0
+scale = Vector2(0.159, 0.159)
+texture = ExtResource("3_gnkmh")
