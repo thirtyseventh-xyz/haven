@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		was_in_air = true
 		velocity += get_gravity() * delta
-		if sign(velocity.y) != last_vel_state:# and sign(velocity.y) != 0 and last_vel_state == 1 :
+		if sign(velocity.y) != last_vel_state and sign(velocity.y) == 1: # and sign(velocity.y) != 0 and last_vel_state == 1 :
 			new_line_point.emit(position)
 		
 		last_vel_state = sign(velocity.y)

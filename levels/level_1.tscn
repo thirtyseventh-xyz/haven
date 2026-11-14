@@ -2,11 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://8uqsydavrtke" path="res://objects/player/player.tscn" id="1_vn7o3"]
 [ext_resource type="Script" uid="uid://tghifcnl73av" path="res://levels/line_2d.gd" id="2_jirdo"]
+[ext_resource type="Script" uid="uid://cr5jca3dqh4fc" path="res://levels/stock_line.gd" id="3_bt44k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5fwx"]
 size = Vector2(490, 74)
 
 [sub_resource type="QuadMesh" id="QuadMesh_57e5w"]
+
+[sub_resource type="Gradient" id="Gradient_jirdo"]
 
 [node name="Node2D" type="Node2D" unique_id=1660641705]
 
@@ -46,9 +49,15 @@ mesh = SubResource("QuadMesh_57e5w")
 [node name="Player" parent="." unique_id=1278515245 instance=ExtResource("1_vn7o3")]
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1403083273]
+visible = false
+gradient = SubResource("Gradient_jirdo")
 script = ExtResource("2_jirdo")
 
+[node name="StockLine" type="Node2D" parent="." unique_id=441086240]
+script = ExtResource("3_bt44k")
+
 [connection signal="new_line_point" from="Player" to="Line2D" method="new_point"]
+[connection signal="new_line_point" from="Player" to="StockLine" method="new_point"]
 [connection signal="track_last_point" from="Player" to="Line2D" method="track_last_point"]
 
 [editable path="Player"]
