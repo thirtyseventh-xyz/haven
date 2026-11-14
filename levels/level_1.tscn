@@ -43,10 +43,10 @@ position = Vector2(-7.6293945e-06, -7.6293945e-06)
 scale = Vector2(496, 79.99999)
 mesh = SubResource("QuadMesh_57e5w")
 
-[node name="Player" parent="." unique_id=1278515245 instance=ExtResource("1_vn7o3")]
-
 [node name="Line2D" type="Line2D" parent="." unique_id=1403083273]
 script = ExtResource("2_jirdo")
+
+[node name="Player" parent="." unique_id=1278515245 instance=ExtResource("1_vn7o3")]
 
 [connection signal="new_line_point" from="Player" to="Line2D" method="new_point"]
 [connection signal="track_last_point" from="Player" to="Line2D" method="track_last_point"]
