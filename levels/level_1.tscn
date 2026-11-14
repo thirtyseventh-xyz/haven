@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b2gnc4ufb6b04"]
 
 [ext_resource type="PackedScene" uid="uid://8uqsydavrtke" path="res://objects/player/player.tscn" id="1_vn7o3"]
+[ext_resource type="Script" uid="uid://tghifcnl73av" path="res://levels/line_2d.gd" id="2_jirdo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5fwx"]
 size = Vector2(490, 74)
@@ -44,3 +45,11 @@ mesh = SubResource("QuadMesh_57e5w")
 
 [node name="Player" parent="." unique_id=1278515245 instance=ExtResource("1_vn7o3")]
 position = Vector2(544, 248)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1403083273]
+position = Vector2(320, 304)
+script = ExtResource("2_jirdo")
+
+[connection signal="new_line_point" from="Player" to="Line2D" method="new_point"]
+
+[editable path="Player"]
