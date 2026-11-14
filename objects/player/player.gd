@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -600.0
 signal new_line_point(pos:Vector2)
@@ -15,12 +14,26 @@ func _input(event: InputEvent) -> void:
 			velocity.y = JUMP_VELOCITY
 			new_line_point.emit(position)
 
+
+var last_vel_state:int = 0
+var was_in_air:bool = false
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	track_last_point.emit(position)
 	
 	if not is_on_floor():
+		was_in_air = true
 		velocity += get_gravity() * delta
+		if sign(velocity.y) != last_vel_state:# and sign(velocity.y) != 0 and last_vel_state == 1 :
+			new_line_point.emit(position)
+		
+		last_vel_state = sign(velocity.y)
 
+	if was_in_air and is_on_floor():
+		was_in_air = false
+		new_line_point.emit(position)
+	
 	velocity.x = SPEED
 	move_and_slide()
+	
+	#print(str(velocity))
