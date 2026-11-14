@@ -15,3 +15,5 @@ shape = SubResource("CircleShape2D_a5fwx")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1767026703]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ssrue")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=836499005]

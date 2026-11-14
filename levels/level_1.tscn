@@ -20,5 +20,27 @@ position = Vector2(-7.6293945e-06, -7.6293945e-06)
 scale = Vector2(496, 79.99999)
 mesh = SubResource("QuadMesh_57e5w")
 
+[node name="TestPlatform2" type="StaticBody2D" parent="." unique_id=219690860]
+position = Vector2(1168, 264)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestPlatform2" unique_id=1025620808]
+shape = SubResource("RectangleShape2D_a5fwx")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="TestPlatform2" unique_id=1065376927]
+position = Vector2(-7.6293945e-06, -7.6293945e-06)
+scale = Vector2(496, 79.99999)
+mesh = SubResource("QuadMesh_57e5w")
+
+[node name="TestPlatform3" type="StaticBody2D" parent="." unique_id=640697380]
+position = Vector2(1768, 152)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestPlatform3" unique_id=1051535577]
+shape = SubResource("RectangleShape2D_a5fwx")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="TestPlatform3" unique_id=894247972]
+position = Vector2(-7.6293945e-06, -7.6293945e-06)
+scale = Vector2(496, 79.99999)
+mesh = SubResource("QuadMesh_57e5w")
+
 [node name="Player" parent="." unique_id=1278515245 instance=ExtResource("1_vn7o3")]
 position = Vector2(544, 248)
