@@ -6,8 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7eeuo"]
 size = Vector2(199.00002, 27)
 
-[node name="Node2D" type="StaticBody2D" unique_id=1921648163]
+[node name="AutoPlatform" type="StaticBody2D" unique_id=1921648163]
 script = ExtResource("1_7eeuo")
+metadata/Index = 0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=192182164]
 offset_left = -99.99999
