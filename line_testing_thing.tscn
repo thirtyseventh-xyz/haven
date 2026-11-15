@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c1pdi3l4jxu13"]
+
+[ext_resource type="Script" uid="uid://dsq8eul28gt8p" path="res://line_testing_thing.gd" id="1_m30s3"]
+
+[node name="Line testing thing" type="Node2D" unique_id=2120763605]
+script = ExtResource("1_m30s3")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1640204655]
+width = 2.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=14827931]
+position = Vector2(364, -202)
+zoom = Vector2(1.54, 1.54)

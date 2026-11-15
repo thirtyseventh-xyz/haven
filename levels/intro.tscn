@@ -14,7 +14,8 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_7ba2f")
 theme_override_font_sizes/normal_font_size = 50
 text = "Click one of your emails :D
-<------"
+<------
+Pick Nvidia, it's the only one that works lol"
 horizontal_alignment = 1
 vertical_alignment = 1
 
