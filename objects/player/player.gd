@@ -1,12 +1,15 @@
 extends CharacterBody2D
 
 @export var SPEED = 200
-const JUMP_VELOCITY = -450
+var this_jump_from_coin:bool = false
+const JUMP_VELOCITY = -550
 signal new_line_point(pos:Vector2)
 signal track_last_point(pos:Vector2)
 @onready var camera_2d: Camera2D = $Camera2D
 var frozen = true
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var platform:PackedScene = load("res://objects/platform.tscn")
+
 
 func _ready() -> void:
 	new_line_point.emit(position)
@@ -30,6 +33,12 @@ func _physics_process(delta: float) -> void:
 			velocity += get_gravity() * delta
 		if sign(velocity.y) != last_vel_state and sign(velocity.y) == 1: # and sign(velocity.y) != 0 and last_vel_state == 1 :
 			new_line_point.emit(position)
+			if this_jump_from_coin:
+				this_jump_from_coin = false
+				var new_platform = platform.instantiate()
+				get_tree().root.add_child(new_platform)
+				new_platform.position = Vector2(position.x+15,position.y+50)
+				
 		
 		last_vel_state = sign(velocity.y)
 
@@ -44,6 +53,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_coin_body_entered(body: Node2D) -> void:
 	velocity.y = -1200
+	this_jump_from_coin = true
 	new_line_point.emit(position)
 
 

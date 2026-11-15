@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bmhlgy5k7bmw5" path="res://assets/player.svg" id="3_bt44k"]
 [ext_resource type="Script" uid="uid://cr5jca3dqh4fc" path="res://levels/stock_line.gd" id="4_kx6l7"]
 [ext_resource type="PackedScene" uid="uid://bnfr0kqb476gu" path="res://objects/platform.tscn" id="5_l53as"]
-[ext_resource type="Texture2D" uid="uid://3hjkvxls60c" path="res://assets/platforms/smol platform.svg" id="6_3sk1a"]
 [ext_resource type="PackedScene" uid="uid://ci5s34eug0i16" path="res://coin.tscn" id="7_gwceb"]
 [ext_resource type="Script" uid="uid://cyrmt54vmp006" path="res://levels/intro_line.gd" id="9_3sk1a"]
 [ext_resource type="Texture2D" uid="uid://ctpq5hngb3a4h" path="res://assets/black line.png" id="10_08mmt"]
@@ -40,52 +39,17 @@ script = ExtResource("4_kx6l7")
 
 [node name="PlayerLine" type="Line2D" parent="StockLine" unique_id=2074722612]
 
-[node name="plat 1" type="StaticBody2D" parent="." unique_id=2018771496]
-position = Vector2(35, 69)
+[node name="Platform" parent="." unique_id=766101959 instance=ExtResource("5_l53as")]
+position = Vector2(88, 48)
 
-[node name="NinePatchRect" type="NinePatchRect" parent="plat 1" unique_id=701895150]
-offset_left = -11.000002
-offset_top = -4.0
-offset_right = 756.29565
-offset_bottom = 196.0
-scale = Vector2(0.159, 0.159)
-texture = ExtResource("6_3sk1a")
-patch_margin_left = 200
-patch_margin_top = 100
-patch_margin_right = 200
-patch_margin_bottom = 100
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-metadata/_edit_use_anchors_ = true
+[node name="Platform2" parent="." unique_id=1819238898 instance=ExtResource("5_l53as")]
+position = Vector2(304, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="plat 1" unique_id=688453716]
-position = Vector2(50.125, 12.5)
-shape = SubResource("RectangleShape2D_a5fwx")
+[node name="Platform4" parent="." unique_id=364419843 instance=ExtResource("5_l53as")]
+position = Vector2(536, 72)
 
-[node name="plat 2" type="StaticBody2D" parent="." unique_id=531926533]
-position = Vector2(164, 21)
-
-[node name="NinePatchRect" type="NinePatchRect" parent="plat 2" unique_id=129072969]
-offset_left = 44.999985
-offset_top = 6.6000032
-offset_right = 780.8491
-offset_bottom = 206.6
-scale = Vector2(0.159, 0.159)
-texture = ExtResource("6_3sk1a")
-patch_margin_left = 200
-patch_margin_top = 100
-patch_margin_right = 200
-patch_margin_bottom = 100
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="plat 2" unique_id=348924157]
-position = Vector2(103.5, 21.5)
-shape = SubResource("RectangleShape2D_a5fwx")
-
-[node name="plat 3" parent="." unique_id=766101959 instance=ExtResource("5_l53as")]
-position = Vector2(382, 24)
+[node name="Platform3" parent="." unique_id=1375509924 instance=ExtResource("5_l53as")]
+position = Vector2(776, 3)
 
 [node name="Player" parent="." unique_id=1278515245 instance=ExtResource("1_vn7o3")]
 
@@ -96,14 +60,18 @@ scale = Vector2(0.55, 0.55)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_bt44k")
 
+[node name="CollisionShape2D" parent="Player/PlatformSpawnTrigger" parent_id_path=PackedInt32Array(1278515245, 1721226344) index="0" unique_id=392031118]
+position = Vector2(64, 0)
+
 [node name="SpawnTimer" parent="Player/PlatformSpawnTrigger" parent_id_path=PackedInt32Array(1278515245, 1721226344) index="1" unique_id=1321182921]
 wait_time = 2.5
+autostart = false
 
 [node name="PlatformSpawnArea" parent="Player/Spawners" parent_id_path=PackedInt32Array(1278515245, 1586537380) index="0" unique_id=2043939327]
 position = Vector2(624, 8)
 
 [node name="CollisionShape2D" parent="Player/Spawners/PlatformSpawnArea" index="0" unique_id=1084860974]
-position = Vector2(1, 0)
+position = Vector2(-56, -144)
 
 [node name="PlatformSpawnArea2" parent="Player/Spawners" parent_id_path=PackedInt32Array(1278515245, 1586537380) index="1" unique_id=1284250988]
 position = Vector2(800, -352)
@@ -112,7 +80,7 @@ position = Vector2(800, -352)
 position = Vector2(736, 408)
 
 [node name="coin" parent="." unique_id=1956196080 instance=ExtResource("7_gwceb")]
-position = Vector2(500, -38)
+position = Vector2(788, -56)
 
 [node name="IntroLine" type="Node2D" parent="." unique_id=38497491]
 script = ExtResource("9_3sk1a")
@@ -155,6 +123,5 @@ texture = ExtResource("11_5ot28")
 [connection signal="body_entered" from="Player/PlatformSpawnTrigger" to="Player/Spawners" method="trigger_spawn_from_old_platform"]
 [connection signal="timeout" from="Player/PlatformSpawnTrigger/SpawnTimer" to="Player/Spawners" method="spawn_platform"]
 [connection signal="body_entered" from="coin" to="Player" method="_on_coin_body_entered"]
-[connection signal="keyframes_generated" from="IntroLine" to="Player" method="_on_intro_line_keyframes_generated"]
 
 [editable path="Player"]

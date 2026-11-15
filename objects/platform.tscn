@@ -11,10 +11,10 @@ script = ExtResource("1_8voax")
 metadata/Spawner = 0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=2024653754]
-offset_left = 44.999985
-offset_top = 6.6000032
-offset_right = 780.8491
-offset_bottom = 206.6
+offset_left = -59.0
+offset_top = -15.0
+offset_right = 676.8491
+offset_bottom = 185.0
 scale = Vector2(0.159, 0.159)
 texture = ExtResource("1_axfyg")
 patch_margin_left = 200
@@ -26,5 +26,5 @@ axis_stretch_vertical = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=806582571]
-position = Vector2(103.5, 21.5)
+position = Vector2(-0.49999237, -0.10000515)
 shape = SubResource("RectangleShape2D_a5fwx")
