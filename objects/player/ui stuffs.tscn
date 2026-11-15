@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dvctt8lm4q1lp" path="res://assets/Emails/hc2.png" id="7_e0h8l"]
 [ext_resource type="Texture2D" uid="uid://dh0ka1vdu7dqg" path="res://assets/Emails/google.png" id="8_hvxn6"]
 [ext_resource type="Texture2D" uid="uid://b6uhve7ubnft" path="res://assets/haven ui export 1 text.svg" id="9_km7mw"]
+[ext_resource type="Script" uid="uid://cbjg0ssyumoin" path="res://objects/player/tickers.gd" id="11_wldnt"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1630836580]
 
@@ -109,27 +110,44 @@ texture = ExtResource("1_hrueh")
 scale = Vector2(0.15874328, 0.1587457)
 texture = ExtResource("9_km7mw")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Stock ui stuffs" unique_id=1718886538]
+[node name="tickers" type="Control" parent="Stock ui stuffs" unique_id=2142418862]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wldnt")
+
+[node name="Ticker" type="RichTextLabel" parent="Stock ui stuffs/tickers" unique_id=1718886538]
 layout_mode = 0
-offset_left = -212.0
+offset_left = -267.0
 offset_top = -302.0
-offset_right = -18.0
+offset_right = 40.0
 offset_bottom = -226.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_tmoa6")
 theme_override_font_sizes/normal_font_size = 50
-text = "NVIDIA"
+text = "NVIDIA-192"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Stock ui stuffs" unique_id=1419613296]
+[node name="Percent" type="RichTextLabel" parent="Stock ui stuffs/tickers" unique_id=19221480]
 layout_mode = 0
-offset_left = -16.0
-offset_top = -290.0
-offset_right = 178.0
-offset_bottom = -214.0
+offset_left = 31.0
+offset_top = -286.0
+offset_right = 413.0
+offset_bottom = -221.0
+theme_override_colors/default_color = Color(1, 0, 0.016666412, 1)
+theme_override_fonts/normal_font = ExtResource("2_tmoa6")
+theme_override_font_sizes/normal_font_size = 45
+text = "-111 (-198%)"
+
+[node name="Goal" type="RichTextLabel" parent="Stock ui stuffs/tickers" unique_id=1735579629]
+layout_mode = 0
+offset_left = 340.0
+offset_top = -308.0
+offset_right = 595.0
+offset_bottom = -232.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_tmoa6")
 theme_override_font_sizes/normal_font_size = 50
-text = "(NVDA)"
+text = "Peak-250"
 
 [connection signal="mouse_entered" from="Stock ui stuffs/ScrollContainer/VBoxContainer/TextureRect" to="Stock ui stuffs/ScrollContainer" method="_on_texture_rect_mouse_entered"]
 [connection signal="mouse_exited" from="Stock ui stuffs/ScrollContainer/VBoxContainer/TextureRect" to="Stock ui stuffs/ScrollContainer" method="_on_texture_rect_mouse_exited"]

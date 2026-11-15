@@ -25,6 +25,10 @@ func _input(event: InputEvent) -> void:
 var last_vel_state:int = 0
 var was_in_air:bool = false
 func _physics_process(delta: float) -> void:
+	
+	Global.pxpos = position.x
+	Global.pypos = position.y
+	
 	# Add the gravity.
 	if Input.is_key_pressed(KEY_SHIFT):
 		is_paused = true
