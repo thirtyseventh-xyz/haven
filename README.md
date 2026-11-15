@@ -9,4 +9,4 @@ either press space or left click to jump, and your goal is to climb higher on th
 ## links and credits
 made by drew and grayson!
 
-itch.io: dont forget pls
+[Itch link]([url](https://drew-o-o.itch.io/perfectly-realistic-investment-banking-simulator))
