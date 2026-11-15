@@ -13,6 +13,9 @@
 [ext_resource type="Script" uid="uid://cn4jsdrlo0hln" path="res://levels/death_box.gd" id="11_aerfg"]
 [ext_resource type="PackedScene" uid="uid://b2cx44dc71oqc" path="res://objects/auto-platform.tscn" id="12_aerfg"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aerfg"]
+size = Vector2(476, 27)
+
 [sub_resource type="Gradient" id="Gradient_3sk1a"]
 offsets = PackedFloat32Array(0.5170631, 0.5211996)
 colors = PackedColorArray(0.23927, 0.71, 0.15620002, 1, 0.76020277, 3.6820024e-06, 5.7756904e-07, 1)
@@ -27,10 +30,10 @@ default_color = Color(1, 0, 0, 1)
 script = ExtResource("2_jirdo")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=194008310]
-offset_left = -45044.0
-offset_top = -25109.0
-offset_right = 573446.56
-offset_bottom = 317155.12
+offset_left = -46156.004
+offset_top = -25141.002
+offset_right = 572334.56
+offset_bottom = 317123.13
 scale = Vector2(0.159, 0.159)
 texture = ExtResource("1_kx6l7")
 stretch_mode = 1
@@ -43,11 +46,19 @@ script = ExtResource("4_kx6l7")
 [node name="Platform" parent="." unique_id=766101959 instance=ExtResource("5_l53as")]
 position = Vector2(88, 48)
 
+[node name="NinePatchRect" parent="Platform" index="0" unique_id=2024653754]
+offset_right = 2893.7107
+offset_bottom = 230.283
+
+[node name="CollisionShape2D" parent="Platform" index="1" unique_id=806582571]
+position = Vector2(138, -0.1000061)
+shape = SubResource("RectangleShape2D_aerfg")
+
 [node name="Platform2" parent="." unique_id=1819238898 instance=ExtResource("5_l53as")]
-position = Vector2(304, 0)
+position = Vector2(673, -32)
 
 [node name="Platform4" parent="." unique_id=364419843 instance=ExtResource("5_l53as")]
-position = Vector2(536, 72)
+position = Vector2(905, 40)
 
 [node name="Player" parent="." unique_id=1278515245 instance=ExtResource("1_vn7o3")]
 
@@ -59,7 +70,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_bt44k")
 
 [node name="coin" parent="." unique_id=1956196080 instance=ExtResource("7_gwceb")]
-position = Vector2(788, -56)
+position = Vector2(1149, -88)
 
 [node name="IntroLine" type="Node2D" parent="." unique_id=38497491]
 script = ExtResource("9_3sk1a")
@@ -106,7 +117,7 @@ position = Vector2(0, -221)
 shape = SubResource("WorldBoundaryShape2D_a5fwx")
 
 [node name="AutoPlatform" parent="." unique_id=1921648163 instance=ExtResource("12_aerfg")]
-position = Vector2(788, -10)
+position = Vector2(1157, -42)
 
 [connection signal="new_line_point" from="Player" to="StockLine" method="new_point"]
 [connection signal="track_last_point" from="Player" to="StockLine" method="track_last_point"]
@@ -116,5 +127,6 @@ position = Vector2(788, -10)
 [connection signal="body_entered" from="DeathBox" to="DeathBox" method="object_entered"]
 [connection signal="lose_game_trigger" from="DeathBox" to="Player/Camera2D" method="_on_death_box_lose_game_trigger"]
 
+[editable path="Platform"]
 [editable path="Player"]
 [editable path="Player/CanvasLayer"]
