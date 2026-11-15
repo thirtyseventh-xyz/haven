@@ -93,6 +93,7 @@ layout_mode = 2
 texture = ExtResource("1_hrueh")
 
 [node name="TextureRect2" type="TextureRect" parent="Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=994555952]
+modulate = Color(0.58, 0.58, 0.58, 0.49803922)
 layout_mode = 2
 texture = ExtResource("4_sbuhl")
 
@@ -101,6 +102,7 @@ layout_mode = 2
 texture = ExtResource("1_hrueh")
 
 [node name="TextureRect3" type="TextureRect" parent="Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=1438644188]
+modulate = Color(0.58, 0.58, 0.58, 0.49803922)
 layout_mode = 2
 texture = ExtResource("5_go37x")
 
@@ -109,6 +111,7 @@ layout_mode = 2
 texture = ExtResource("1_hrueh")
 
 [node name="TextureRect4" type="TextureRect" parent="Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=113171215]
+modulate = Color(0.58, 0.58, 0.58, 0.49803922)
 layout_mode = 2
 texture = ExtResource("6_f67an")
 
@@ -117,6 +120,7 @@ layout_mode = 2
 texture = ExtResource("1_hrueh")
 
 [node name="TextureRect5" type="TextureRect" parent="Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=1789307388]
+modulate = Color(0.58, 0.58, 0.58, 0.49803922)
 layout_mode = 2
 texture = ExtResource("7_e0h8l")
 
@@ -125,6 +129,7 @@ layout_mode = 2
 texture = ExtResource("1_hrueh")
 
 [node name="TextureRect6" type="TextureRect" parent="Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=2052505644]
+modulate = Color(0.58, 0.58, 0.58, 0.49803922)
 layout_mode = 2
 texture = ExtResource("8_hvxn6")
 
@@ -164,6 +169,18 @@ theme_override_fonts/normal_font = ExtResource("2_tmoa6")
 theme_override_font_sizes/normal_font_size = 45
 text = "-111 (-198%)"
 
+[node name="PercentGreen" type="RichTextLabel" parent="Stock ui stuffs/tickers" unique_id=1065051826]
+visible = false
+layout_mode = 0
+offset_left = 31.0
+offset_top = -286.0
+offset_right = 413.0
+offset_bottom = -221.0
+theme_override_colors/default_color = Color(0.43733332, 0.82, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_tmoa6")
+theme_override_font_sizes/normal_font_size = 45
+text = "-111 (-198%)"
+
 [node name="Goal" type="RichTextLabel" parent="Stock ui stuffs/tickers" unique_id=1735579629]
 layout_mode = 0
 offset_left = 340.0
@@ -197,6 +214,30 @@ theme_override_fonts/normal_font = ExtResource("2_tmoa6")
 theme_override_font_sizes/normal_font_size = 25
 text = "Try to bring them back to their former capitalist glory! (space to jump)"
 horizontal_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1248276562]
+offset_left = -88866.0
+offset_top = -56777.0
+offset_right = 4.0
+offset_bottom = 3298.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=146164668]
+offset_left = -44520.0
+offset_top = 2139.0
+offset_right = 44350.0
+offset_bottom = 62214.0
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1851461889]
+offset_left = 1151.0
+offset_top = -40244.0
+offset_right = 90021.0
+offset_bottom = 19831.0
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=672307275]
+offset_left = -44102.0
+offset_top = -60069.0
+offset_right = 44768.0
+offset_bottom = 6.0
 
 [connection signal="mouse_entered" from="Stock ui stuffs/ScrollContainer/VBoxContainer/TextureRect" to="Stock ui stuffs/ScrollContainer" method="_on_texture_rect_mouse_entered"]
 [connection signal="mouse_exited" from="Stock ui stuffs/ScrollContainer/VBoxContainer/TextureRect" to="Stock ui stuffs/ScrollContainer" method="_on_texture_rect_mouse_exited"]

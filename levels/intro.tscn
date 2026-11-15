@@ -20,3 +20,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ui stuffs" parent="." unique_id=1630836580 instance=ExtResource("4_32ggn")]
+
+[node name="Ticker" parent="ui stuffs/Stock ui stuffs/tickers" parent_id_path=PackedInt32Array(1630836580, 2142418862) index="0" unique_id=1718886538]
+visible = false
+
+[node name="Percent" parent="ui stuffs/Stock ui stuffs/tickers" parent_id_path=PackedInt32Array(1630836580, 2142418862) index="1" unique_id=19221480]
+visible = false
+
+[node name="PercentGreen" parent="ui stuffs/Stock ui stuffs/tickers" parent_id_path=PackedInt32Array(1630836580, 2142418862) index="2" unique_id=1065051826]
+visible = false
+
+[node name="Goal" parent="ui stuffs/Stock ui stuffs/tickers" parent_id_path=PackedInt32Array(1630836580, 2142418862) index="3" unique_id=1735579629]
+visible = false
+
+[editable path="ui stuffs"]
