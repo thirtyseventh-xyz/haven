@@ -5,6 +5,8 @@ var line:Line2D
 
 func _ready() -> void:
 	new_point(Vector2(0,0))
+	
+	$PlayerLine.add_point(last_point)
 
 func new_point(pos:Vector2) -> void:
 	line = Line2D.new()
@@ -18,5 +20,5 @@ func new_point(pos:Vector2) -> void:
 	last_point = pos
 	
 
-#func track_last_point(new_pos:Vector2) -> void:
-	#line.set_point_position(created_points, new_pos)
+func track_last_point(new_pos:Vector2) -> void:
+	$PlayerLine.set_point_position(0,)

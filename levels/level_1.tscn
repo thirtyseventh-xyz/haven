@@ -62,6 +62,8 @@ texture = ExtResource("3_bt44k")
 [node name="StockLine" type="Node2D" parent="." unique_id=441086240]
 script = ExtResource("4_kx6l7")
 
+[node name="PlayerLine" type="Line2D" parent="StockLine" unique_id=2074722612]
+
 [connection signal="new_line_point" from="Player" to="Line2D" method="new_point"]
 [connection signal="new_line_point" from="Player" to="StockLine" method="new_point"]
 [connection signal="track_last_point" from="Player" to="Line2D" method="track_last_point"]
