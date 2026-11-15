@@ -19,10 +19,10 @@ default_color = Color(1, 0, 0, 1)
 script = ExtResource("2_jirdo")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=194008310]
-offset_left = -44971.0
-offset_top = -25141.002
-offset_right = 573519.56
-offset_bottom = 317123.13
+offset_left = -45044.0
+offset_top = -25109.0
+offset_right = 573446.56
+offset_bottom = 317155.12
 scale = Vector2(0.159, 0.159)
 texture = ExtResource("1_kx6l7")
 stretch_mode = 1

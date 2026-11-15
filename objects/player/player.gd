@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 200
+@export var SPEED = 200
 const JUMP_VELOCITY = -450
 signal new_line_point(pos:Vector2)
 signal track_last_point(pos:Vector2)
@@ -41,3 +41,4 @@ func _physics_process(delta: float) -> void:
 
 func _on_coin_body_entered(body: Node2D) -> void:
 	velocity.y = -1200
+	new_line_point.emit(position)
