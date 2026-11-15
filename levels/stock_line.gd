@@ -3,7 +3,7 @@ extends Node2D
 var last_point:Vector2 = Vector2(0,0)
 var line:Line2D
 
-const RED_LINE_COLOUR = Color(1,0,0)
+const RED_LINE_COLOUR = Color(1.0, 0.0, 0.0, 1.0)
 const GREEN_LINE_COLOUR = Color(0.02, 0.435, 0.365, 1.0)
 const YELLOW_LINE_COLOUR = Color(0.864, 0.564, 0.15, 1.0)
 

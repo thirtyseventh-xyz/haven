@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bnfr0kqb476gu" path="res://objects/platform.tscn" id="5_l53as"]
 [ext_resource type="Texture2D" uid="uid://3hjkvxls60c" path="res://assets/platforms/smol platform.svg" id="6_3sk1a"]
 [ext_resource type="PackedScene" uid="uid://ci5s34eug0i16" path="res://coin.tscn" id="7_gwceb"]
+[ext_resource type="Script" uid="uid://cyrmt54vmp006" path="res://levels/intro_line.gd" id="9_3sk1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5fwx"]
 size = Vector2(117.75, 27)
@@ -92,8 +93,17 @@ texture = ExtResource("3_bt44k")
 [node name="coin" parent="." unique_id=1956196080 instance=ExtResource("7_gwceb")]
 position = Vector2(500, -38)
 
+[node name="IntroLine" type="Node2D" parent="." unique_id=38497491]
+script = ExtResource("9_3sk1a")
+
+[node name="IntroLineLine" type="Line2D" parent="IntroLine" unique_id=1181563965]
+points = PackedVector2Array(0, 0)
+default_color = Color(1, 0, 0, 1)
+antialiased = true
+
 [connection signal="new_line_point" from="Player" to="StockLine" method="new_point"]
 [connection signal="track_last_point" from="Player" to="StockLine" method="track_last_point"]
 [connection signal="body_entered" from="coin" to="Player" method="_on_coin_body_entered"]
+[connection signal="keyframes_generated" from="IntroLine" to="Player" method="_on_intro_line_keyframes_generated"]
 
 [editable path="Player"]

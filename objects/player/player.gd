@@ -4,6 +4,8 @@ extends CharacterBody2D
 const JUMP_VELOCITY = -450
 signal new_line_point(pos:Vector2)
 signal track_last_point(pos:Vector2)
+@onready var camera_2d: Camera2D = $Camera2D
+
 
 func _ready() -> void:
 	new_line_point.emit(position)
@@ -42,3 +44,7 @@ func _physics_process(delta: float) -> void:
 func _on_coin_body_entered(body: Node2D) -> void:
 	velocity.y = -1200
 	new_line_point.emit(position)
+
+
+func _on_intro_line_keyframes_generated() -> void:
+	camera_2d.position = Global.intro_keyframes_nvda[1]
