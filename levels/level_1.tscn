@@ -51,8 +51,8 @@ scale = Vector2(0.55, 0.55)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_bt44k")
 
-[node name="CanvasLayer" parent="Player" index="3" unique_id=1630836580]
-visible = false
+[node name="CollisionShape2D" parent="Player/PlatformSpawnTrigger" parent_id_path=PackedInt32Array(1278515245, 1721226344) index="0" unique_id=392031118]
+position = Vector2(64, 0)
 
 [node name="SpawnTimer" parent="Player/PlatformSpawnTrigger" parent_id_path=PackedInt32Array(1278515245, 1721226344) index="1" unique_id=1321182921]
 wait_time = 2.5
@@ -62,7 +62,7 @@ autostart = false
 position = Vector2(624, 8)
 
 [node name="CollisionShape2D" parent="Player/Spawners/PlatformSpawnArea" index="0" unique_id=1084860974]
-position = Vector2(1, 0)
+position = Vector2(-56, -144)
 
 [node name="PlatformSpawnArea2" parent="Player/Spawners" parent_id_path=PackedInt32Array(1278515245, 1586537380) index="1" unique_id=1284250988]
 position = Vector2(800, -352)
@@ -86,6 +86,5 @@ antialiased = true
 [connection signal="body_entered" from="Player/PlatformSpawnTrigger" to="Player/Spawners" method="trigger_spawn_from_old_platform"]
 [connection signal="timeout" from="Player/PlatformSpawnTrigger/SpawnTimer" to="Player/Spawners" method="spawn_platform"]
 [connection signal="body_entered" from="coin" to="Player" method="_on_coin_body_entered"]
-[connection signal="keyframes_generated" from="IntroLine" to="Player" method="_on_intro_line_keyframes_generated"]
 
 [editable path="Player"]
