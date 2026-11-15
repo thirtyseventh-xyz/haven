@@ -160,5 +160,17 @@ theme_override_fonts/normal_font = ExtResource("2_tmoa6")
 theme_override_font_sizes/normal_font_size = 38
 horizontal_alignment = 1
 
+[node name="tooltip" type="RichTextLabel" parent="Stock ui stuffs/tickers" unique_id=1953161475]
+layout_mode = 0
+offset_left = -279.0
+offset_top = 260.0
+offset_right = 547.0
+offset_bottom = 299.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_tmoa6")
+theme_override_font_sizes/normal_font_size = 25
+text = "Try to bring them back to their former capitalist glory! (space to jump)"
+horizontal_alignment = 1
+
 [connection signal="mouse_entered" from="Stock ui stuffs/ScrollContainer/VBoxContainer/TextureRect" to="Stock ui stuffs/ScrollContainer" method="_on_texture_rect_mouse_entered"]
 [connection signal="mouse_exited" from="Stock ui stuffs/ScrollContainer/VBoxContainer/TextureRect" to="Stock ui stuffs/ScrollContainer" method="_on_texture_rect_mouse_exited"]

@@ -3,7 +3,7 @@ extends Node
 var intro_keyframes_nvda = []
 var pxpos = 0
 var pypos = 0
-
+var lost_nvda = false
 var platforms_recursion:int = 0
 var frozen = true
 var won_nvda = false

@@ -1,5 +1,7 @@
 extends Area2D
+signal lose_game_trigger()
 
 func object_entered(body:Node2D) -> void:
 	if body is Player:
-		get_tree().change_scene_to_file("res://levels/lose.tscn")
+		Global.frozen = true
+		lose_game_trigger.emit()
