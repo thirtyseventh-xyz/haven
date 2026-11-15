@@ -18,6 +18,9 @@ radius = 17.117243
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bi5m7"]
 load_path = "res://.godot/imported/player.svg-e72d10ccf9c1b331af0b406534563f6c.ctex"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psowp"]
+size = Vector2(176, 600)
+
 [node name="Player" type="CharacterBody2D" unique_id=1278515245]
 script = ExtResource("1_g7ett")
 
@@ -127,3 +130,15 @@ texture = ExtResource("4_m4kly")
 [node name="HavenUiExport1Text" type="Sprite2D" parent="CanvasLayer/Stock ui stuffs" unique_id=218079646]
 scale = Vector2(0.15874328, 0.1587457)
 texture = ExtResource("5_ow0dq")
+
+[node name="PlatformSpawnArea" type="Area2D" parent="." unique_id=478590503]
+position = Vector2(800, 20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformSpawnArea" unique_id=1279086673]
+shape = SubResource("RectangleShape2D_psowp")
+
+[node name="PlatformSpawnTrigger" type="Area2D" parent="." unique_id=989415937]
+position = Vector2(-440, 20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformSpawnTrigger" unique_id=2060087758]
+shape = SubResource("RectangleShape2D_psowp")
