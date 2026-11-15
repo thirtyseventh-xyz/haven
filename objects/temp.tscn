@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cgrwhbgg5uk4s"]
+
+[ext_resource type="PackedScene" uid="uid://b2cx44dc71oqc" path="res://objects/auto-platform.tscn" id="1_rs1om"]
+
+[node name="Node2D" type="Node2D" unique_id=1459984062]
+
+[node name="AutoPlatform" parent="." unique_id=1921648163 instance=ExtResource("1_rs1om")]
+
+[node name="AutoPlatform2" parent="." unique_id=489620551 instance=ExtResource("1_rs1om")]
+metadata/Index = 1

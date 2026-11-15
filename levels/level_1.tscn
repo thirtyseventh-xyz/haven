@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ctpq5hngb3a4h" path="res://assets/black line.png" id="10_08mmt"]
 [ext_resource type="Texture2D" uid="uid://cacnbnvab3vv" path="res://assets/black line v.png" id="11_5ot28"]
 [ext_resource type="Script" uid="uid://cn4jsdrlo0hln" path="res://levels/death_box.gd" id="11_aerfg"]
+[ext_resource type="PackedScene" uid="uid://b2cx44dc71oqc" path="res://objects/auto-platform.tscn" id="12_aerfg"]
 
 [sub_resource type="Gradient" id="Gradient_3sk1a"]
 offsets = PackedFloat32Array(0.5170631, 0.5211996)
@@ -18,7 +19,7 @@ colors = PackedColorArray(0.23927, 0.71, 0.15620002, 1, 0.76020277, 3.6820024e-0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a5fwx"]
 
-[node name="Node2D" type="Node2D" unique_id=1660641705]
+[node name="Node2D2" type="Node2D" unique_id=1660641705]
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1403083273]
 visible = false
@@ -48,9 +49,6 @@ position = Vector2(304, 0)
 [node name="Platform4" parent="." unique_id=364419843 instance=ExtResource("5_l53as")]
 position = Vector2(536, 72)
 
-[node name="Platform3" parent="." unique_id=1375509924 instance=ExtResource("5_l53as")]
-position = Vector2(776, 3)
-
 [node name="Player" parent="." unique_id=1278515245 instance=ExtResource("1_vn7o3")]
 
 [node name="CollisionShape2D" parent="Player" index="0" unique_id=1612980490]
@@ -59,25 +57,6 @@ scale = Vector2(0.55, 0.55)
 [node name="Sprite2D" parent="Player" index="1" unique_id=1767026703]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_bt44k")
-
-[node name="CollisionShape2D" parent="Player/PlatformSpawnTrigger" parent_id_path=PackedInt32Array(1278515245, 1721226344) index="0" unique_id=392031118]
-position = Vector2(64, 0)
-
-[node name="SpawnTimer" parent="Player/PlatformSpawnTrigger" parent_id_path=PackedInt32Array(1278515245, 1721226344) index="1" unique_id=1321182921]
-wait_time = 2.5
-autostart = false
-
-[node name="PlatformSpawnArea" parent="Player/Spawners" parent_id_path=PackedInt32Array(1278515245, 1586537380) index="0" unique_id=2043939327]
-position = Vector2(624, 8)
-
-[node name="CollisionShape2D" parent="Player/Spawners/PlatformSpawnArea" index="0" unique_id=1084860974]
-position = Vector2(-56, -144)
-
-[node name="PlatformSpawnArea2" parent="Player/Spawners" parent_id_path=PackedInt32Array(1278515245, 1586537380) index="1" unique_id=1284250988]
-position = Vector2(800, -352)
-
-[node name="PlatformSpawnArea3" parent="Player/Spawners" parent_id_path=PackedInt32Array(1278515245, 1586537380) index="2" unique_id=610502949]
-position = Vector2(736, 408)
 
 [node name="coin" parent="." unique_id=1956196080 instance=ExtResource("7_gwceb")]
 position = Vector2(788, -56)
@@ -125,11 +104,11 @@ script = ExtResource("11_aerfg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBox" unique_id=45513852]
 shape = SubResource("WorldBoundaryShape2D_a5fwx")
 
+[node name="AutoPlatform" parent="." unique_id=1921648163 instance=ExtResource("12_aerfg")]
+position = Vector2(788, -10)
+
 [connection signal="new_line_point" from="Player" to="StockLine" method="new_point"]
 [connection signal="track_last_point" from="Player" to="StockLine" method="track_last_point"]
-[connection signal="end_text" from="Player/Camera2D" to="Player/CanvasLayer/Stock ui stuffs/tickers" method="_on_camera_2d_end_text"]
-[connection signal="body_entered" from="Player/PlatformSpawnTrigger" to="Player/Spawners" method="trigger_spawn_from_old_platform"]
-[connection signal="timeout" from="Player/PlatformSpawnTrigger/SpawnTimer" to="Player/Spawners" method="spawn_platform"]
 [connection signal="keyframes_generated" from="IntroLine" to="Player" method="_on_intro_line_keyframes_generated"]
 [connection signal="body_entered" from="DeathBox" to="DeathBox" method="object_entered"]
 

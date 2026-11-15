@@ -9,7 +9,7 @@ signal new_line_point(pos:Vector2)
 signal track_last_point(pos:Vector2)
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var platform:PackedScene = load("res://objects/platform.tscn")
+@onready var auto_platform:PackedScene = load("res://objects/auto-platform.tscn")
 
 func _ready() -> void:
 	new_line_point.emit(position)
@@ -48,25 +48,10 @@ func _physics_process(delta: float) -> void:
 				
 				if this_jump_from_coin:
 					this_jump_from_coin = false
-					var new_platform = platform.instantiate()
-					get_tree().root.add_child(new_platform)
+					var new_platform = auto_platform.instantiate()
 					new_platform.position = Vector2(position.x+15,position.y+50)
-					
-					new_platform = platform.instantiate()
-					get_tree().root.add_child(new_platform)
-					new_platform.position = Vector2(position.x+75,position.y+50)
-					
-					new_platform = platform.instantiate()
-					get_tree().root.add_child(new_platform) 
-					new_platform.position = Vector2(position.x+135,position.y+50)
-					
-					new_platform = platform.instantiate()
-					get_tree().root.add_child(new_platform)
-					new_platform.position = Vector2(position.x+330,position.y+50)  
-					
-					new_platform = platform.instantiate()
-					get_tree().root.add_child(new_platform)
-					new_platform.position = Vector2(position.x+390,position.y+50)
+					new_platform.set_meta("Index",len(Global.platforms_recursion))
+					add_sibling.call_deferred(new_platform)
 					
 			last_vel_state = sign(velocity.y)
 

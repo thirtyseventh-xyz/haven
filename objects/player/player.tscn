@@ -3,19 +3,12 @@
 [ext_resource type="Script" uid="uid://d4gh47prx2awy" path="res://objects/player/player.gd" id="1_g7ett"]
 [ext_resource type="Script" uid="uid://cccp3ys7lmd8l" path="res://objects/player/camera_2d.gd" id="2_psowp"]
 [ext_resource type="PackedScene" uid="uid://57qm0vh4lxwk" path="res://objects/player/ui stuffs.tscn" id="3_ssrue"]
-[ext_resource type="Script" uid="uid://cpc6djg572cdl" path="res://objects/player/platform_spawn_area.gd" id="12_45urx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a5fwx"]
 radius = 17.117243
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bi5m7"]
 load_path = "res://.godot/imported/player.svg-e72d10ccf9c1b331af0b406534563f6c.ctex"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnjyq"]
-size = Vector2(112, 121472)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5fwx"]
-size = Vector2(112, 352)
 
 [sub_resource type="Animation" id="Animation_jnjyq"]
 length = 0.001
@@ -93,42 +86,10 @@ script = ExtResource("2_psowp")
 
 [node name="CanvasLayer" parent="." unique_id=1630836580 instance=ExtResource("3_ssrue")]
 
-[node name="PlatformSpawnTrigger" type="Area2D" parent="." unique_id=1721226344]
-position = Vector2(-464, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformSpawnTrigger" unique_id=392031118]
-shape = SubResource("RectangleShape2D_jnjyq")
-
-[node name="SpawnTimer" type="Timer" parent="PlatformSpawnTrigger" unique_id=1321182921]
-autostart = true
-
-[node name="Spawners" type="Node2D" parent="." unique_id=1586537380]
-script = ExtResource("12_45urx")
-
-[node name="PlatformSpawnArea" type="Area2D" parent="Spawners" unique_id=2043939327]
-position = Vector2(768, -16)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawners/PlatformSpawnArea" unique_id=1084860974]
-shape = SubResource("RectangleShape2D_a5fwx")
-
-[node name="PlatformSpawnArea2" type="Area2D" parent="Spawners" unique_id=1284250988]
-position = Vector2(768, -16)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawners/PlatformSpawnArea2" unique_id=1634233629]
-shape = SubResource("RectangleShape2D_a5fwx")
-
-[node name="PlatformSpawnArea3" type="Area2D" parent="Spawners" unique_id=610502949]
-position = Vector2(768, -16)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawners/PlatformSpawnArea3" unique_id=153710485]
-shape = SubResource("RectangleShape2D_a5fwx")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1474476909]
 libraries/ = SubResource("AnimationLibrary_xkryw")
 
 [connection signal="end_text" from="Camera2D" to="CanvasLayer/Stock ui stuffs/tickers" method="_on_camera_2d_end_text"]
-[connection signal="body_entered" from="PlatformSpawnTrigger" to="Spawners/PlatformSpawnArea" method="trigger_spawn_from_old_platform"]
-[connection signal="timeout" from="PlatformSpawnTrigger/SpawnTimer" to="Spawners/PlatformSpawnArea" method="spawn_platform"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="CanvasLayer"]
