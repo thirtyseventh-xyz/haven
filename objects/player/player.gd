@@ -8,6 +8,8 @@ const JUMP_VELOCITY = -550
 signal new_line_point(pos:Vector2)
 signal track_last_point(pos:Vector2)
 @onready var camera_2d: Camera2D = $Camera2D
+var frozen = true
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var platform:PackedScene = load("res://objects/platform.tscn")
 
 func _ready() -> void:
@@ -34,7 +36,8 @@ func _physics_process(delta: float) -> void:
 		
 		if not is_on_floor():
 			was_in_air = true
-			velocity += get_gravity() * delta
+			if frozen == false:
+				velocity += get_gravity() * delta
 			if sign(velocity.y) != last_vel_state and sign(velocity.y) == 1: # and sign(velocity.y) != 0 and last_vel_state == 1 :
 				new_line_point.emit(position)
 				
@@ -66,10 +69,9 @@ func _physics_process(delta: float) -> void:
 			was_in_air = false
 			new_line_point.emit(position)
 		
-		velocity.x = SPEED
+		if frozen == false:
+			velocity.x = SPEED
 		move_and_slide()
-		
-	#print(str(velocity))
 
 
 func get_coin() -> void:
@@ -79,4 +81,7 @@ func get_coin() -> void:
 
 
 func _on_intro_line_keyframes_generated() -> void:
-	camera_2d.position = Global.intro_keyframes_nvda[1]
+	for i in range(3):
+		animation_player.get_animation("nvda intro").track_set_key_value(0, i, Global.intro_keyframes_nvda[i])
+	print(Global.intro_keyframes_nvda)
+	animation_player.play("nvda intro")

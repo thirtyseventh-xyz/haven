@@ -6,7 +6,6 @@ var num_intervals = 20
 var y_val = 0
 signal keyframes_generated()
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
 	intro_line_line.set_point_position(0, Vector2(-((num_intervals+(num_intervals/2))*10*multiplier_thing_for_scale), 0))
@@ -20,7 +19,6 @@ func _ready() -> void:
 		((i+1)*10*multiplier_thing_for_scale)
 		-((num_intervals+(num_intervals/2))*10*multiplier_thing_for_scale)
 		,y_val))
-	print(intro_line_line.points)
 	num_intervals /= 2
 	for i in range(num_intervals):
 		if i == num_intervals-1:
@@ -31,10 +29,9 @@ func _ready() -> void:
 		((2*num_intervals+(i+1))*10*multiplier_thing_for_scale)
 		-((2*num_intervals+num_intervals)*10*multiplier_thing_for_scale)
 		,y_val))
-	print(intro_line_line.points)
 	
 	Global.intro_keyframes_nvda = [Vector2((-num_intervals*3*10*multiplier_thing_for_scale),0),Vector2(-num_intervals*10*multiplier_thing_for_scale,-nvda_peak),Vector2(0,0)]
-	
+	keyframes_generated.emit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
