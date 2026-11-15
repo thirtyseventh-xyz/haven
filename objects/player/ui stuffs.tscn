@@ -12,6 +12,15 @@
 [ext_resource type="Texture2D" uid="uid://b6uhve7ubnft" path="res://assets/haven ui export 1 text.svg" id="9_km7mw"]
 [ext_resource type="Script" uid="uid://cbjg0ssyumoin" path="res://objects/player/tickers.gd" id="11_wldnt"]
 
+[sub_resource type="QuadMesh" id="QuadMesh_a5fwx"]
+
+[sub_resource type="Gradient" id="Gradient_wldnt"]
+offsets = PackedFloat32Array(0.45302013)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kwhoc"]
+gradient = SubResource("Gradient_wldnt")
+
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1630836580]
 
 [node name="Stock ui stuffs" type="Control" parent="." unique_id=1344493960]
@@ -61,6 +70,23 @@ texture = ExtResource("1_hrueh")
 [node name="TextureRect" type="TextureRect" parent="Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=34785791]
 layout_mode = 2
 texture = ExtResource("3_wldnt")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Stock ui stuffs/ScrollContainer/VBoxContainer/TextureRect" unique_id=44488347]
+position = Vector2(572.20245, 579.0072)
+scale = Vector2(654.33813, 138.6146)
+mesh = SubResource("QuadMesh_a5fwx")
+texture = SubResource("GradientTexture1D_kwhoc")
+
+[node name="Label" type="Label" parent="Stock ui stuffs/ScrollContainer/VBoxContainer/TextureRect" unique_id=286048414]
+layout_mode = 0
+offset_left = 295.59766
+offset_top = 491.0818
+offset_right = 861.59766
+offset_bottom = 623.0818
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_tmoa6")
+theme_override_font_sizes/font_size = 96
+text = "three people"
 
 [node name="Spacer" type="TextureRect" parent="Stock ui stuffs/ScrollContainer/VBoxContainer" unique_id=1429610519]
 layout_mode = 2
