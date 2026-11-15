@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -600.0
+const SPEED = 200
+const JUMP_VELOCITY = -450
 signal new_line_point(pos:Vector2)
 signal track_last_point(pos:Vector2)
 
@@ -37,3 +37,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	#print(str(velocity))
+
+
+func _on_coin_body_entered(body: Node2D) -> void:
+	velocity.y = -1200
