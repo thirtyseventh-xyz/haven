@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://d32sbp6luhpsb"]
+
+[ext_resource type="Script" uid="uid://jw6kjk4cgsbd" path="res://objects/platform.gd" id="1_q4k6a"]
+[ext_resource type="Texture2D" uid="uid://3hjkvxls60c" path="res://assets/platforms/smol platform.svg" id="2_0y4f8"]
+[ext_resource type="PackedScene" uid="uid://ci5s34eug0i16" path="res://coin.tscn" id="3_0y4f8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5fwx"]
+size = Vector2(199.00002, 27)
+
+[node name="Platform" type="StaticBody2D" unique_id=766101959]
+script = ExtResource("1_q4k6a")
+metadata/Spawner = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=2024653754]
+offset_left = -99.99999
+offset_top = -15.0
+offset_right = 1151.5723
+offset_bottom = 185.0
+scale = Vector2(0.159, 0.159)
+texture = ExtResource("2_0y4f8")
+patch_margin_left = 200
+patch_margin_top = 100
+patch_margin_right = 200
+patch_margin_bottom = 100
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=806582571]
+position = Vector2(-0.49999237, -0.10000515)
+shape = SubResource("RectangleShape2D_a5fwx")
+
+[node name="coin" parent="." unique_id=48711753 instance=ExtResource("3_0y4f8")]
+position = Vector2(0, -48)
