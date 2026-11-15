@@ -29,15 +29,15 @@ script = ExtResource("2_psowp")
 
 [node name="CanvasLayer" parent="." unique_id=1630836580 instance=ExtResource("3_ssrue")]
 
+[node name="PlatformSpawnTrigger" type="Area2D" parent="." unique_id=1721226344]
+position = Vector2(-464, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformSpawnTrigger" unique_id=392031118]
+shape = SubResource("RectangleShape2D_a5fwx")
+
 [node name="PlatformSpawnArea" type="Area2D" parent="." unique_id=2043939327]
 position = Vector2(768, -16)
 script = ExtResource("12_45urx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformSpawnArea" unique_id=1084860974]
-shape = SubResource("RectangleShape2D_a5fwx")
-
-[node name="PlatformSpawnTrigger" type="Area2D" parent="." unique_id=1721226344]
-position = Vector2(-464, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformSpawnTrigger" unique_id=392031118]
 shape = SubResource("RectangleShape2D_a5fwx")
