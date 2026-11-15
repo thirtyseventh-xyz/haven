@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var SPEED = 200
-const JUMP_VELOCITY = -450
+const JUMP_VELOCITY = -550
 signal new_line_point(pos:Vector2)
 signal track_last_point(pos:Vector2)
 
