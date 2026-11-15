@@ -8,7 +8,7 @@ func spawn_platform() -> void:
 	var spawn_pos:Vector2
 	spawn_pos = Vector2(0,randf_range(0,spawn_height))
 	
-	
+	print(str(spawn_pos))
 
 func _ready() -> void:
 	spawn_platform()

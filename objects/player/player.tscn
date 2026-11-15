@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://iyejncqy6v0u" path="res://assets/Emails/drew'.png" id="8_ylcck"]
 [ext_resource type="Texture2D" uid="uid://dvctt8lm4q1lp" path="res://assets/Emails/hc2.png" id="9_x5bgp"]
 [ext_resource type="Texture2D" uid="uid://dh0ka1vdu7dqg" path="res://assets/Emails/google.png" id="10_dthqj"]
+[ext_resource type="Script" uid="uid://cpc6djg572cdl" path="res://objects/player/platform_spawn_area.gd" id="12_45urx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a5fwx"]
 radius = 17.117243
@@ -133,6 +134,7 @@ texture = ExtResource("5_ow0dq")
 
 [node name="PlatformSpawnArea" type="Area2D" parent="." unique_id=478590503]
 position = Vector2(800, 20)
+script = ExtResource("12_45urx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformSpawnArea" unique_id=1279086673]
 shape = SubResource("RectangleShape2D_psowp")

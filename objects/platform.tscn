@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bnfr0kqb476gu"]
+
+[ext_resource type="Texture2D" uid="uid://3hjkvxls60c" path="res://assets/platforms/smol platform.svg" id="1_axfyg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5fwx"]
+size = Vector2(117.75, 27)
+
+[node name="plat 3" type="StaticBody2D" unique_id=766101959]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=2024653754]
+offset_left = 44.999985
+offset_top = 6.6000032
+offset_right = 780.8491
+offset_bottom = 206.6
+scale = Vector2(0.159, 0.159)
+texture = ExtResource("1_axfyg")
+patch_margin_left = 200
+patch_margin_top = 100
+patch_margin_right = 200
+patch_margin_bottom = 100
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=806582571]
+position = Vector2(103.5, 21.5)
+shape = SubResource("RectangleShape2D_a5fwx")

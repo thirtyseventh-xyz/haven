@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://tghifcnl73av" path="res://levels/line_2d.gd" id="2_jirdo"]
 [ext_resource type="Texture2D" uid="uid://bmhlgy5k7bmw5" path="res://assets/player.svg" id="3_bt44k"]
 [ext_resource type="Script" uid="uid://cr5jca3dqh4fc" path="res://levels/stock_line.gd" id="4_kx6l7"]
+[ext_resource type="PackedScene" uid="uid://bnfr0kqb476gu" path="res://objects/platform.tscn" id="5_l53as"]
 [ext_resource type="Texture2D" uid="uid://3hjkvxls60c" path="res://assets/platforms/smol platform.svg" id="6_3sk1a"]
 [ext_resource type="PackedScene" uid="uid://ci5s34eug0i16" path="res://coin.tscn" id="7_gwceb"]
 
@@ -76,27 +77,8 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(103.5, 21.5)
 shape = SubResource("RectangleShape2D_a5fwx")
 
-[node name="plat 3" type="StaticBody2D" parent="." unique_id=1225577672]
+[node name="plat 3" parent="." unique_id=766101959 instance=ExtResource("5_l53as")]
 position = Vector2(382, 24)
-
-[node name="NinePatchRect" type="NinePatchRect" parent="plat 3" unique_id=91380221]
-offset_left = 44.999985
-offset_top = 6.6000032
-offset_right = 780.8491
-offset_bottom = 206.6
-scale = Vector2(0.159, 0.159)
-texture = ExtResource("6_3sk1a")
-patch_margin_left = 200
-patch_margin_top = 100
-patch_margin_right = 200
-patch_margin_bottom = 100
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="plat 3" unique_id=1402382338]
-position = Vector2(103.5, 21.5)
-shape = SubResource("RectangleShape2D_a5fwx")
 
 [node name="Player" parent="." unique_id=1278515245 instance=ExtResource("1_vn7o3")]
 
