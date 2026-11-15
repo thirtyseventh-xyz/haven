@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://57qm0vh4lxwk"]
 
 [ext_resource type="Texture2D" uid="uid://knerau6getdw" path="res://assets/Emails/spacer.png" id="1_hrueh"]
+[ext_resource type="Script" uid="uid://dpx0tw08h1dcl" path="res://objects/player/scroll_container.gd" id="1_tmoa6"]
 [ext_resource type="FontFile" uid="uid://cq2bptet54w06" path="res://assets/Nunito-Bold.ttf" id="2_tmoa6"]
 [ext_resource type="Texture2D" uid="uid://cdmb8hdcrmaqe" path="res://assets/Emails/nvidia.png" id="3_wldnt"]
 [ext_resource type="Texture2D" uid="uid://briax2kvxene1" path="res://assets/Emails/hc1.png" id="4_sbuhl"]
@@ -34,6 +35,7 @@ offset_top = -171.0
 offset_right = 730.862
 offset_bottom = 2778.6855
 scale = Vector2(0.159, 0.159)
+script = ExtResource("1_tmoa6")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Stock ui stuffs/ScrollContainer" unique_id=884514027]
 layout_mode = 2
@@ -106,3 +108,6 @@ texture = ExtResource("1_hrueh")
 [node name="HavenUiExport1Text" type="Sprite2D" parent="Stock ui stuffs" unique_id=724789082]
 scale = Vector2(0.15874328, 0.1587457)
 texture = ExtResource("9_km7mw")
+
+[connection signal="mouse_entered" from="Stock ui stuffs/ScrollContainer/VBoxContainer/TextureRect" to="Stock ui stuffs/ScrollContainer" method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="Stock ui stuffs/ScrollContainer/VBoxContainer/TextureRect" to="Stock ui stuffs/ScrollContainer" method="_on_texture_rect_mouse_exited"]
