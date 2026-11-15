@@ -14,10 +14,10 @@ func spawn_platform() -> void:
 		var spawn_pos:Vector2
 		var random_area = randi_range(1,4)
 		if random_area != 4:
-			spawn_pos = Vector2(spawner.global_position.x,randf_range(spawn_height*(2.0/3.0),spawn_height/3))
+			spawn_pos = Vector2(spawner.global_position.x,spawner.global_position.y- randf_range(spawn_height*(2.0/3.0),spawn_height/3))
 			if last_spawn_pos:
 				while last_spawn_pos.distance_to(spawn_pos) > 20:
-					spawn_pos = Vector2(spawner.global_position.x,randf_range(spawn_height*(2.0/3.0),spawn_height/3))
+					spawn_pos = Vector2(spawner.global_position.x,spawner.global_position.y -randf_range(spawn_height*(2.0/3.0),spawn_height/3))
 
 		else:
 			spawn_pos = Vector2(spawner.global_position.x,randf_range(0,spawn_height))
