@@ -3,13 +3,16 @@ extends Node2D
 var last_point:Vector2 = Vector2(0,0)
 var line:Line2D
 
+const RED_LINE_COLOUR = Color(1,0,0)
+const GREEN_LINE_COLOUR = Color(0.02, 0.435, 0.365, 1.0)
+const YELLOW_LINE_COLOUR = Color(0.864, 0.564, 0.15, 1.0)
+
 func _ready() -> void:
 	new_point(Vector2(0,0))
 	
 	$PlayerLine.add_point(last_point)
 	$PlayerLine.add_point(last_point)
-	$PlayerLine.default_color = Color(1,0,0)
-
+	$PlayerLine.default_color = RED_LINE_COLOUR
 
 func new_point(pos:Vector2) -> void:
 	line = Line2D.new()
@@ -19,11 +22,11 @@ func new_point(pos:Vector2) -> void:
 	line.add_point(pos)
 	
 	if pos.y < last_point.y:
-		line.default_color = Color(0,1,0)
+		line.default_color = GREEN_LINE_COLOUR
 	elif pos.y > last_point.y:
-		line.default_color = Color(1,0,0)
+		line.default_color = RED_LINE_COLOUR
 	else:
-		line.default_color = Color(1,1,0)
+		line.default_color = YELLOW_LINE_COLOUR
 	
 	last_point = pos
 	
@@ -33,9 +36,9 @@ func track_last_point(new_pos:Vector2) -> void:
 	$PlayerLine.set_point_position(1,new_pos)
 	
 	if new_pos.y < last_point.y:
-		$PlayerLine.default_color = Color(0,1,0)
+		$PlayerLine.default_color = GREEN_LINE_COLOUR
 	elif new_pos.y > last_point.y:
-		$PlayerLine.default_color = Color(1,0,0)
+		$PlayerLine.default_color = RED_LINE_COLOUR
 	else:
-		$PlayerLine.default_color = Color(1,1,0)
+		$PlayerLine.default_color = YELLOW_LINE_COLOUR
 	
