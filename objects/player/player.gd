@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 				if this_jump_from_coin:
 					this_jump_from_coin = false
 					var new_platform = auto_platform.instantiate()
-					new_platform.position = Vector2(position.x+15,position.y+50)
+					new_platform.position = Vector2(position.x+65,position.y+75)
 					new_platform.set_meta("Index",len(Global.platforms_recursion))
 					add_sibling.call_deferred(new_platform)
 					
