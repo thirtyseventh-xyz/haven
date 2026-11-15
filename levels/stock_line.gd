@@ -13,6 +13,9 @@ func _ready() -> void:
 	$PlayerLine.add_point(last_point)
 	$PlayerLine.add_point(last_point)
 	$PlayerLine.default_color = RED_LINE_COLOUR
+	
+	$PlayerLine.begin_cap_mode = 2
+	$PlayerLine.end_cap_mode = 2
 
 func new_point(pos:Vector2) -> void:
 	line = Line2D.new()
@@ -20,6 +23,9 @@ func new_point(pos:Vector2) -> void:
 	
 	line.add_point(last_point)
 	line.add_point(pos)
+	
+	line.begin_cap_mode = 2
+	line.end_cap_mode = 2
 	
 	if pos.y < last_point.y:
 		line.default_color = GREEN_LINE_COLOUR
@@ -29,7 +35,6 @@ func new_point(pos:Vector2) -> void:
 		line.default_color = YELLOW_LINE_COLOUR
 	
 	last_point = pos
-	
 
 func track_last_point(new_pos:Vector2) -> void:
 	$PlayerLine.set_point_position(0,last_point)
@@ -41,4 +46,3 @@ func track_last_point(new_pos:Vector2) -> void:
 		$PlayerLine.default_color = RED_LINE_COLOUR
 	else:
 		$PlayerLine.default_color = YELLOW_LINE_COLOUR
-	
