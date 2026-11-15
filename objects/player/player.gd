@@ -19,6 +19,10 @@ func _input(event: InputEvent) -> void:
 		if event.pressed and event.keycode == KEY_SPACE and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 			new_line_point.emit(position)
+	if event is InputEventMouseButton:
+		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT and is_on_floor():
+			velocity.y = JUMP_VELOCITY
+			new_line_point.emit(position)
 
 
 var last_vel_state:int = 0
@@ -49,7 +53,7 @@ func _physics_process(delta: float) -> void:
 				if this_jump_from_coin:
 					this_jump_from_coin = false
 					var new_platform = auto_platform.instantiate()
-					new_platform.position = Vector2(position.x+65,position.y+75)
+					new_platform.position = Vector2(position.x+75,position.y+75)
 					new_platform.set_meta("Index",len(Global.platforms_recursion))
 					add_sibling.call_deferred(new_platform)
 					
