@@ -8,7 +8,6 @@ const JUMP_VELOCITY = -550
 signal new_line_point(pos:Vector2)
 signal track_last_point(pos:Vector2)
 @onready var camera_2d: Camera2D = $Camera2D
-var frozen = true
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var platform:PackedScene = load("res://objects/platform.tscn")
 
@@ -25,7 +24,9 @@ func _input(event: InputEvent) -> void:
 var last_vel_state:int = 0
 var was_in_air:bool = false
 func _physics_process(delta: float) -> void:
-	
+	if Global.frozen == true:
+		velocity.x = 0
+		velocity.y = 0
 	Global.pxpos = position.x
 	Global.pypos = position.y
 	
@@ -40,7 +41,7 @@ func _physics_process(delta: float) -> void:
 		
 		if not is_on_floor():
 			was_in_air = true
-			if frozen == false:
+			if Global.frozen == false:
 				velocity += get_gravity() * delta
 			if sign(velocity.y) != last_vel_state and sign(velocity.y) == 1: # and sign(velocity.y) != 0 and last_vel_state == 1 :
 				new_line_point.emit(position)
@@ -73,7 +74,7 @@ func _physics_process(delta: float) -> void:
 			was_in_air = false
 			new_line_point.emit(position)
 		
-		if frozen == false:
+		if Global.frozen == false:
 			velocity.x = SPEED
 		move_and_slide()
 
@@ -89,4 +90,4 @@ func _on_intro_line_keyframes_generated() -> void:
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	frozen = false
+	Global.frozen = false

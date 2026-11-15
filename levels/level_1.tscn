@@ -127,9 +127,11 @@ shape = SubResource("WorldBoundaryShape2D_a5fwx")
 
 [connection signal="new_line_point" from="Player" to="StockLine" method="new_point"]
 [connection signal="track_last_point" from="Player" to="StockLine" method="track_last_point"]
+[connection signal="end_text" from="Player/Camera2D" to="Player/CanvasLayer/Stock ui stuffs/tickers" method="_on_camera_2d_end_text"]
 [connection signal="body_entered" from="Player/PlatformSpawnTrigger" to="Player/Spawners" method="trigger_spawn_from_old_platform"]
 [connection signal="timeout" from="Player/PlatformSpawnTrigger/SpawnTimer" to="Player/Spawners" method="spawn_platform"]
 [connection signal="keyframes_generated" from="IntroLine" to="Player" method="_on_intro_line_keyframes_generated"]
 [connection signal="body_entered" from="DeathBox" to="DeathBox" method="object_entered"]
 
 [editable path="Player"]
+[editable path="Player/CanvasLayer"]

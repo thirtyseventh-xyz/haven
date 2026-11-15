@@ -126,6 +126,9 @@ shape = SubResource("RectangleShape2D_a5fwx")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1474476909]
 libraries/ = SubResource("AnimationLibrary_xkryw")
 
+[connection signal="end_text" from="Camera2D" to="CanvasLayer/Stock ui stuffs/tickers" method="_on_camera_2d_end_text"]
 [connection signal="body_entered" from="PlatformSpawnTrigger" to="Spawners/PlatformSpawnArea" method="trigger_spawn_from_old_platform"]
 [connection signal="timeout" from="PlatformSpawnTrigger/SpawnTimer" to="Spawners/PlatformSpawnArea" method="spawn_platform"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+
+[editable path="CanvasLayer"]
