@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://8uqsydavrtke"]
 
 [ext_resource type="Script" uid="uid://d4gh47prx2awy" path="res://objects/player/player.gd" id="1_g7ett"]
-[ext_resource type="Texture2D" uid="uid://uelvhslkv8pv" path="res://icon.svg" id="2_ssrue"]
 [ext_resource type="FontFile" uid="uid://cq2bptet54w06" path="res://assets/Nunito-Bold.ttf" id="3_ow0dq"]
 [ext_resource type="Texture2D" uid="uid://cdmb8hdcrmaqe" path="res://assets/Emails/nvidia.png" id="3_xkryw"]
 [ext_resource type="Texture2D" uid="uid://knerau6getdw" path="res://assets/Emails/spacer.png" id="4_m4kly"]
@@ -15,6 +14,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_a5fwx"]
 radius = 32.0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bi5m7"]
+load_path = "res://.godot/imported/player.svg-e72d10ccf9c1b331af0b406534563f6c.ctex"
+
 [node name="Player" type="CharacterBody2D" unique_id=1278515245]
 script = ExtResource("1_g7ett")
 
@@ -22,8 +24,8 @@ script = ExtResource("1_g7ett")
 shape = SubResource("CircleShape2D_a5fwx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1767026703]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_ssrue")
+scale = Vector2(0.16931216, 0.16931218)
+texture = SubResource("CompressedTexture2D_bi5m7")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=836499005]
 position = Vector2(-105, -43)
