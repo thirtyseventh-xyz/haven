@@ -3,12 +3,25 @@
 [ext_resource type="Script" uid="uid://d4gh47prx2awy" path="res://objects/player/player.gd" id="1_g7ett"]
 [ext_resource type="Script" uid="uid://cccp3ys7lmd8l" path="res://objects/player/camera_2d.gd" id="2_psowp"]
 [ext_resource type="PackedScene" uid="uid://57qm0vh4lxwk" path="res://objects/player/ui stuffs.tscn" id="3_ssrue"]
+[ext_resource type="FontFile" uid="uid://cq2bptet54w06" path="res://assets/Nunito-Bold.ttf" id="3_ow0dq"]
+[ext_resource type="Texture2D" uid="uid://cdmb8hdcrmaqe" path="res://assets/Emails/nvidia.png" id="3_xkryw"]
+[ext_resource type="Texture2D" uid="uid://knerau6getdw" path="res://assets/Emails/spacer.png" id="4_m4kly"]
+[ext_resource type="Texture2D" uid="uid://b6uhve7ubnft" path="res://assets/haven ui export 1 text.svg" id="5_ow0dq"]
+[ext_resource type="Texture2D" uid="uid://briax2kvxene1" path="res://assets/Emails/hc1.png" id="6_c34wb"]
+[ext_resource type="Texture2D" uid="uid://dfeeswkkrtq18" path="res://assets/Emails/metrolinx.png" id="7_45rsp"]
+[ext_resource type="Texture2D" uid="uid://iyejncqy6v0u" path="res://assets/Emails/drew'.png" id="8_ylcck"]
+[ext_resource type="Texture2D" uid="uid://dvctt8lm4q1lp" path="res://assets/Emails/hc2.png" id="9_x5bgp"]
+[ext_resource type="Texture2D" uid="uid://dh0ka1vdu7dqg" path="res://assets/Emails/google.png" id="10_dthqj"]
+[ext_resource type="Script" uid="uid://cpc6djg572cdl" path="res://objects/player/platform_spawn_area.gd" id="12_45urx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a5fwx"]
 radius = 17.117243
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bi5m7"]
 load_path = "res://.godot/imported/player.svg-e72d10ccf9c1b331af0b406534563f6c.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psowp"]
+size = Vector2(176, 600)
 
 [node name="Player" type="CharacterBody2D" unique_id=1278515245]
 script = ExtResource("1_g7ett")
