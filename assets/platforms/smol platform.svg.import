@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iyejncqy6v0u"
-path="res://.godot/imported/drew'.png-95f57c1fef05f090138bd7ff48b63ec8.ctex"
+uid="uid://3hjkvxls60c"
+path="res://.godot/imported/smol platform.svg-d1a938172f69463382834f69b71b7443.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/drew'.png"
-dest_files=["res://.godot/imported/drew'.png-95f57c1fef05f090138bd7ff48b63ec8.ctex"]
+source_file="res://assets/platforms/smol platform.svg"
+dest_files=["res://.godot/imported/smol platform.svg-d1a938172f69463382834f69b71b7443.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
