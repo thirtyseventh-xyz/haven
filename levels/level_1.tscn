@@ -8,9 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://3hjkvxls60c" path="res://assets/platforms/smol platform.svg" id="6_3sk1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5fwx"]
-size = Vector2(490, 74)
-
-[sub_resource type="QuadMesh" id="QuadMesh_57e5w"]
+size = Vector2(224.5, 41)
 
 [node name="Node2D" type="Node2D" unique_id=1660641705]
 
@@ -33,41 +31,68 @@ script = ExtResource("4_kx6l7")
 
 [node name="PlayerLine" type="Line2D" parent="StockLine" unique_id=2074722612]
 
-[node name="TestPlatform" type="StaticBody2D" parent="." unique_id=2018771496]
+[node name="plat 1" type="StaticBody2D" parent="." unique_id=2018771496]
 position = Vector2(0, 72)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TestPlatform" unique_id=688453716]
+[node name="NinePatchRect" type="NinePatchRect" parent="plat 1" unique_id=701895150]
+offset_left = -11.000002
+offset_top = -4.0
+offset_right = 1429.2515
+offset_bottom = 329.33337
+scale = Vector2(0.159, 0.159)
+texture = ExtResource("6_3sk1a")
+patch_margin_left = 200
+patch_margin_top = 100
+patch_margin_right = 200
+patch_margin_bottom = 100
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plat 1" unique_id=688453716]
+position = Vector2(103.5, 21.5)
 shape = SubResource("RectangleShape2D_a5fwx")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="TestPlatform" unique_id=933322260]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(-7.6293945e-06, -7.6293945e-06)
-scale = Vector2(496, 79.99999)
-mesh = SubResource("QuadMesh_57e5w")
+[node name="plat 2" type="StaticBody2D" parent="." unique_id=531926533]
+position = Vector2(348, -1)
 
-[node name="TestPlatform2" type="StaticBody2D" parent="." unique_id=219690860]
-position = Vector2(624, -16)
+[node name="NinePatchRect" type="NinePatchRect" parent="plat 2" unique_id=129072969]
+offset_left = -11.000002
+offset_top = -4.0
+offset_right = 1429.2515
+offset_bottom = 329.33337
+scale = Vector2(0.159, 0.159)
+texture = ExtResource("6_3sk1a")
+patch_margin_left = 200
+patch_margin_top = 100
+patch_margin_right = 200
+patch_margin_bottom = 100
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TestPlatform2" unique_id=1025620808]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plat 2" unique_id=348924157]
+position = Vector2(103.5, 21.5)
 shape = SubResource("RectangleShape2D_a5fwx")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="TestPlatform2" unique_id=1065376927]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(-7.6293945e-06, -7.6293945e-06)
-scale = Vector2(496, 79.99999)
-mesh = SubResource("QuadMesh_57e5w")
+[node name="plat 2" type="StaticBody2D" parent="plat 2" unique_id=1225577672]
+position = Vector2(429, 29)
 
-[node name="TestPlatform3" type="StaticBody2D" parent="." unique_id=640697380]
-position = Vector2(1224, -128)
+[node name="NinePatchRect" type="NinePatchRect" parent="plat 2/plat 2" unique_id=91380221]
+offset_left = -11.000002
+offset_top = -4.0
+offset_right = 1429.2515
+offset_bottom = 329.33337
+scale = Vector2(0.159, 0.159)
+texture = ExtResource("6_3sk1a")
+patch_margin_left = 200
+patch_margin_top = 100
+patch_margin_right = 200
+patch_margin_bottom = 100
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TestPlatform3" unique_id=1051535577]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plat 2/plat 2" unique_id=1402382338]
+position = Vector2(103.5, 21.5)
 shape = SubResource("RectangleShape2D_a5fwx")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="TestPlatform3" unique_id=894247972]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(-7.6293945e-06, -7.6293945e-06)
-scale = Vector2(496, 79.99999)
-mesh = SubResource("QuadMesh_57e5w")
 
 [node name="Player" parent="." unique_id=1278515245 instance=ExtResource("1_vn7o3")]
 
@@ -77,20 +102,6 @@ scale = Vector2(0.55, 0.55)
 [node name="Sprite2D" parent="Player" index="1" unique_id=1767026703]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_bt44k")
-
-[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=701895150]
-offset_left = -4.0000076
-offset_top = 24.999985
-offset_right = 1436.2515
-offset_bottom = 358.33337
-scale = Vector2(0.159, 0.159)
-texture = ExtResource("6_3sk1a")
-patch_margin_left = 200
-patch_margin_top = 100
-patch_margin_right = 200
-patch_margin_bottom = 100
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
 
 [connection signal="new_line_point" from="Player" to="StockLine" method="new_point"]
 [connection signal="track_last_point" from="Player" to="StockLine" method="track_last_point"]
