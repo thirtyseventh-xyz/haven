@@ -119,7 +119,7 @@ scale = Vector2(0.159, 0.159)
 texture = ExtResource("11_5ot28")
 
 [node name="DeathBox" type="Area2D" parent="." unique_id=886644407]
-position = Vector2(-144, 320)
+position = Vector2(-144, 544)
 script = ExtResource("11_aerfg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBox" unique_id=45513852]
