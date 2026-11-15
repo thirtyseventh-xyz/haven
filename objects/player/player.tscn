@@ -17,6 +17,67 @@ size = Vector2(112, 121472)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5fwx"]
 size = Vector2(112, 352)
 
+[sub_resource type="Animation" id="Animation_jnjyq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gnkmh"]
+resource_name = "nvda intro"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5333333, 4.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5333333, 4.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.52, 0.52), Vector2(0.31, 0.31), Vector2(0.745, 0.745)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xkryw"]
+_data = {
+&"RESET": SubResource("Animation_jnjyq"),
+&"nvda intro": SubResource("Animation_gnkmh")
+}
+
 [node name="Player" type="CharacterBody2D" unique_id=1278515245]
 script = ExtResource("1_g7ett")
 
@@ -61,6 +122,9 @@ position = Vector2(768, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawners/PlatformSpawnArea3" unique_id=153710485]
 shape = SubResource("RectangleShape2D_a5fwx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1474476909]
+libraries/ = SubResource("AnimationLibrary_xkryw")
 
 [connection signal="body_entered" from="PlatformSpawnTrigger" to="Spawners/PlatformSpawnArea" method="trigger_spawn_from_old_platform"]
 [connection signal="timeout" from="PlatformSpawnTrigger/SpawnTimer" to="Spawners/PlatformSpawnArea" method="spawn_platform"]

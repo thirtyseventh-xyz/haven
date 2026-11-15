@@ -9,9 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://3hjkvxls60c" path="res://assets/platforms/smol platform.svg" id="6_3sk1a"]
 [ext_resource type="PackedScene" uid="uid://ci5s34eug0i16" path="res://coin.tscn" id="7_gwceb"]
 [ext_resource type="Script" uid="uid://cyrmt54vmp006" path="res://levels/intro_line.gd" id="9_3sk1a"]
+[ext_resource type="Texture2D" uid="uid://ctpq5hngb3a4h" path="res://assets/black line.png" id="10_08mmt"]
+[ext_resource type="Texture2D" uid="uid://cacnbnvab3vv" path="res://assets/black line v.png" id="11_5ot28"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5fwx"]
 size = Vector2(117.75, 27)
+
+[sub_resource type="Gradient" id="Gradient_3sk1a"]
+offsets = PackedFloat32Array(0.5170631, 0.5211996)
+colors = PackedColorArray(0.23927, 0.71, 0.15620002, 1, 0.76020277, 3.6820024e-06, 5.7756904e-07, 1)
 
 [node name="Node2D" type="Node2D" unique_id=1660641705]
 
@@ -113,8 +119,36 @@ script = ExtResource("9_3sk1a")
 
 [node name="IntroLineLine" type="Line2D" parent="IntroLine" unique_id=1181563965]
 points = PackedVector2Array(0, 0)
-default_color = Color(1, 0, 0, 1)
+gradient = SubResource("Gradient_3sk1a")
 antialiased = true
+
+[node name="IntroLineLine2" type="Line2D" parent="IntroLine" unique_id=1326650863]
+default_color = Color(1.0829419e-06, 0.6492976, 0.106542, 1)
+antialiased = true
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1032446496]
+texture_filter = 1
+offset_left = -26933.002
+offset_top = 314.0
+offset_right = -21599.002
+offset_bottom = 354.0
+scale = Vector2(10, 0.159)
+texture = ExtResource("10_08mmt")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1378529023]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4510.0005
+offset_top = -8475.0
+offset_right = -4470.0005
+offset_bottom = 91525.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.159, 0.159)
+texture = ExtResource("11_5ot28")
 
 [connection signal="new_line_point" from="Player" to="StockLine" method="new_point"]
 [connection signal="track_last_point" from="Player" to="StockLine" method="track_last_point"]
