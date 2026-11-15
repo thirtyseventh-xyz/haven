@@ -13,6 +13,8 @@ func new_point(pos:Vector2) -> void:
 	line.add_point(last_point)
 	line.add_point(pos)
 	
+	line.default_color = Color(1,0,0)
+	
 	last_point = pos
 	
 
