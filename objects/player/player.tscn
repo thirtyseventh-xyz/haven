@@ -11,6 +11,9 @@ radius = 17.117243
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bi5m7"]
 load_path = "res://.godot/imported/player.svg-e72d10ccf9c1b331af0b406534563f6c.ctex"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnjyq"]
+size = Vector2(112, 121472)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5fwx"]
 size = Vector2(112, 480)
 
@@ -33,7 +36,10 @@ script = ExtResource("2_psowp")
 position = Vector2(-464, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformSpawnTrigger" unique_id=392031118]
-shape = SubResource("RectangleShape2D_a5fwx")
+shape = SubResource("RectangleShape2D_jnjyq")
+
+[node name="SpawnTimer" type="Timer" parent="PlatformSpawnTrigger" unique_id=1321182921]
+autostart = true
 
 [node name="PlatformSpawnArea" type="Area2D" parent="." unique_id=2043939327]
 position = Vector2(768, -16)
@@ -41,3 +47,6 @@ script = ExtResource("12_45urx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformSpawnArea" unique_id=1084860974]
 shape = SubResource("RectangleShape2D_a5fwx")
+
+[connection signal="body_entered" from="PlatformSpawnTrigger" to="PlatformSpawnArea" method="trigger_spawn_from_old_platform"]
+[connection signal="timeout" from="PlatformSpawnTrigger/SpawnTimer" to="PlatformSpawnArea" method="spawn_platform"]

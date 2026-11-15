@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://bnfr0kqb476gu"]
 
+[ext_resource type="Script" uid="uid://jw6kjk4cgsbd" path="res://objects/platform.gd" id="1_8voax"]
 [ext_resource type="Texture2D" uid="uid://3hjkvxls60c" path="res://assets/platforms/smol platform.svg" id="1_axfyg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5fwx"]
 size = Vector2(117.75, 27)
 
-[node name="plat 3" type="StaticBody2D" unique_id=766101959]
+[node name="Platform" type="StaticBody2D" unique_id=766101959]
+script = ExtResource("1_8voax")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=2024653754]
 offset_left = 44.999985
