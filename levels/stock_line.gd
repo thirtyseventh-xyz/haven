@@ -31,3 +31,11 @@ func new_point(pos:Vector2) -> void:
 func track_last_point(new_pos:Vector2) -> void:
 	$PlayerLine.set_point_position(0,last_point)
 	$PlayerLine.set_point_position(1,new_pos)
+	
+	if new_pos.y < last_point.y:
+		$PlayerLine.default_color = Color(0,1,0)
+	elif new_pos.y > last_point.y:
+		$PlayerLine.default_color = Color(1,0,0)
+	else:
+		$PlayerLine.default_color = Color(1,1,0)
+	
