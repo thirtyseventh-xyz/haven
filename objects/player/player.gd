@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-@export var SPEED = 200
+@export var SPEED = 300
 var this_jump_from_coin:bool = false
 var is_paused:bool = false
 const JUMP_VELOCITY = -550
@@ -73,15 +73,16 @@ func _physics_process(delta: float) -> void:
 			velocity.x = SPEED
 		move_and_slide()
 
-
 func get_coin() -> void:
 	velocity.y = -1500
 	this_jump_from_coin = true
 	new_line_point.emit(position)
 
-
 func _on_intro_line_keyframes_generated() -> void:
 	for i in range(3):
-		animation_player.get_animation("nvda intro").track_set_key_value(0, i, Global.intro_keyframes_nvda[i])
-	print(Global.intro_keyframes_nvda)
-	animation_player.play("nvda intro")
+		$AnimationPlayer.get_animation("nvda intro").track_set_key_value(0, i, Global.intro_keyframes_nvda[i])
+	$AnimationPlayer.play("nvda intro")
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	frozen = false
