@@ -69,9 +69,6 @@ scale = Vector2(0.55, 0.55)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_bt44k")
 
-[node name="CanvasLayer" parent="Player" index="3" unique_id=1630836580]
-visible = false
-
 [node name="coin" parent="." unique_id=1956196080 instance=ExtResource("7_gwceb")]
 position = Vector2(1149, -88)
 
