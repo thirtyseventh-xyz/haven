@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cp26xi5eccnl0"]
+
+[ext_resource type="FontFile" uid="uid://cq2bptet54w06" path="res://assets/Nunito-Bold.ttf" id="1_pkq3o"]
+[ext_resource type="Script" uid="uid://0cplxf33vie1" path="res://levels/lose.gd" id="1_pxsd4"]
+
+[node name="Lose" type="Control" unique_id=1633404652]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pxsd4")
+
+[node name="Label" type="Label" parent="." unique_id=554638008]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 160.0
+offset_top = 176.0
+offset_right = 1016.0
+offset_bottom = 446.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_pkq3o")
+theme_override_font_sizes/font_size = 64
+text = "You lost all of NVIDIA's money! Your business is now defunct."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="." unique_id=435141011]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 472.0
+offset_right = 703.0
+offset_bottom = 503.0
+text = "Turn back time and try again"
+
+[connection signal="pressed" from="Button" to="." method="restart_game"]

@@ -22,7 +22,7 @@ func spawn_platform() -> void:
 		
 		else:
 			spawn_pos = Vector2(spawner.global_position.x,randf_range(0,spawn_height))
-			if last_spawn_pos:	
+			if last_spawn_pos:
 				while last_spawn_pos.distance_to(spawn_pos) > 20:
 					spawn_pos = Vector2(spawner.global_position.x,randf_range(0,spawn_height))
 		
